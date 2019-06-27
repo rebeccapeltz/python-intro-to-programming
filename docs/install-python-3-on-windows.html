@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Environment Setup · GitBook</title>
+        <title>Setup Python 3 on Windows · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,8 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
+    <link rel="next" href="turtle-commands.html" />
     
-    <link rel="prev" href="turtle-commands.html" />
+    
+    <link rel="prev" href="week-4-session-2.html" />
     
 
     </head>
@@ -243,7 +245,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.13" data-path="install-python-3-on-windows.html">
+        <li class="chapter active" data-level="1.13" data-path="install-python-3-on-windows.html">
             
                 <a href="install-python-3-on-windows.html">
             
@@ -269,7 +271,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.15" data-path="environment-setup.html">
+        <li class="chapter " data-level="1.15" data-path="environment-setup.html">
             
                 <a href="environment-setup.html">
             
@@ -312,7 +314,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Environment Setup</a>
+        <a href="." >Setup Python 3 on Windows</a>
     </h1>
 </div>
 
@@ -327,50 +329,62 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="environment-setup">Environment Setup</h1>
-<p>We&apos;ll use these tools in setting up the development environment.   The tools include:</p>
-<p><strong>Python 3</strong>: A interpreter for Python 3 code</p>
-<p><strong>Git</strong>: A file versioning program that provides a bash command line interface when working on Windows</p>
-<p><strong>Visual Studio Code</strong>: An interactive development environment</p>
-<h2 id="python-3">Python 3</h2>
-<p>For Python 3 on Windows 7 install use this link to walk you through the install: <a href="https://docs.python-guide.org/starting/install3/win/" target="_blank">https://docs.python-guide.org/starting/install3/win/</a>.  The link describes how you will install  first install Chocolatey which is a Windows 7 package manager and then use it to install Python3 and will make it possible for your to install Python. Follow the Chocolatey instuctions here:  <a href="https://docs.python-guide.org/starting/install3/win/" target="_blank">https://docs.python-guide.org/starting/install3/win</a>.  Once Python is installed, you&apos;ll install <strong>pip</strong>, which is the Python package manager.</p>
-<h5 id="install-virtualenv-and-setup-first-environment">Install Virtualenv and Setup First Environment</h5>
-<p>In Windows use an elevated prompt (run as admin) run the following command to install virtualenv.</p>
-<pre><code>pip install virtualenv
-</code></pre><p>Easy as that. You&apos;ve just installed the virtualenv tool. I&apos;d strongly encourage you to inspect the help information for the tool to learn more about how it works. To do so, in your terminal type:</p>
-<pre><code>virtualenv -h
-</code></pre><p>You&apos;ll have information that looks something like this:<img src="assets/pip-install.png" alt=""></p>
-<p><em><strong>To test your installation:</strong></em></p>
-<p>Now that you have that installed, we&apos;ll set up a project directory, navigate into that directory and create our virtual environment folder.</p>
-<p>First, navigate into your home directory:</p>
-<p><code>cd %HOMEPATH%</code></p>
-<p>Then create a directory for your project and navigate into it.</p>
-<pre><code>mkdir my_project
-cd my_project
-virtualenv -p [path to python executable] my_env
-</code></pre><p>Follow the link to installing pipenv to set up a python environment manager for more information: <a href="https://docs.python-guide.org/dev/virtualenvs/#virtualenvironments-ref" target="_blank">https://docs.python-guide.org/dev/virtualenvs/#virtualenvironments-ref</a>.</p>
-<h2 id="download-and-install-git">Download and Install Git</h2>
-<p><a href="https://git-scm.com/downloads" target="_blank">https://git-scm.com/downloads</a></p>
-<p>This will install a Folder with a number of file and programs.</p>
-<p>Open a bash window ( &apos;<code>git bash</code>&apos; on Windows) and type in</p>
-<p><code>git --version</code></p>
-<p>This should return a confirmation that git is installed with a version number.</p>
-<h2 id="visual-studio-code">Visual Studio Code</h2>
-<p>Download and install VS Code using the link below.</p>
-<p><a href="https://code.visualstudio.com/" target="_blank">https://code.visualstudio.com/</a></p>
-<h4 id="user-settings">User Settings</h4>
-<p>VS Code allows you to customize settings for all projects (User Settings) or for a single project (Workspace settings).  To modify default settings select <strong>Code</strong> | <strong>Preferences</strong> for the Mac or <strong>File</strong> | <strong>Preferences</strong> for Windows and then <strong>Settings</strong>.  You will see 2 files side by side.  On the left are the default settings and on the right are the User setting overrides.</p>
-<p>To change a default setting find the setting on the left and then copy it to the right with your desired setting.  For example, if you don&apos;t want to see the minimap on the right hand side of the application, you can make the following entry in the file on the right. Notice that options are key : value pairs and that they are commas separated.</p>
-<p><code>{</code></p>
-<p><code>&quot;editor.minimap.enabled&quot;:false</code></p>
-<p><code>}</code></p>
-<p>Make &quot;Git Bash&quot; the default command line in VS Code terminal by adding the following to your User Settings:</p>
-<p><code>&quot;terminal.integrated.shell.windows&quot;: &quot;C:\\Program Files\\Git\\bin\\bash.exe&quot;</code></p>
-<h4 id="add-a-python-plugin">Add a Python Plugin</h4>
-<p>You can add a plugin by clicking on the lowest left icon and then search for and installing a plugin.  Install the &quot;Python&quot; extension by search for &quot;Python&quot; and then selecting and installing.  This plug helps with code formatting.</p>
-<p><img src="assets/python-plugin.png" alt=""></p>
-<h2 id="replit">repl.it</h2>
-<p>There is no installation needed for repl.it as it is a cloud application.  This is a place to create and run python scripts.  It&apos;s also a good place to store them and it&apos;s free to join.  Navigate here on your browser: <a href="https://repl.it/" target="_blank">https://repl.it/</a>.  Each student can create their own account on repl.it and use it to upload scripts created in class.  Code loaded on repl.it will be available for sharing on the web.</p>
+                                <h1 id="step-to-installing-on-windows-10">Step to Installing On Windows 10</h1>
+<h2 id="setup-windows-10-if-new-machine">Setup Windows 10 (if new machine)</h2>
+<ul>
+<li>power on</li>
+<li>turn off cortana (the Microsoft Voice)</li>
+<li>skip sign in with Microsoft by clicking on Offline account then click No</li>
+<li>choose a name I chose testname and password (write down password)</li>
+<li>create security questions and answers all answers seattle</li>
+<li>decline to make cortana your personal assistant</li>
+<li><p>answer no to do more across devices with activity history</p>
+</li>
+<li><p>accept privacy settings - they can be changed later</p>
+</li>
+</ul>
+<p>-----&gt;  OS should boot up  &lt;-----</p>
+<p>mouse error - ignore</p>
+<h2 id="install-python">Install Python</h2>
+<h3 id="--open-chrome-browser-and-make-it-default-browser">--&gt; open Chrome browser and make it default browser</h3>
+<h3 id="we-use-package-managers-to-install-code-because-they-help-to-make-the-code-available-to-all-users">We use package managers to install code because they help to make the code available to all users.</h3>
+<h3 id="install-chocolatey-which-is-a-windows-package-manager">Install Chocolatey which is a Windows Package Manager</h3>
+<h4 id="use-command-line-to-install">Use command line to install</h4>
+<p>Windows button - type command - right click it and choose <strong>Install as Administrator</strong></p>
+<p>If you want to copy from a web page to command line you can use <strong>CTRL-C</strong> to copy and <strong>CTRL-V</strong> to paste</p>
+<p>navigate to <a href="https://chocolatey.org/install" target="_blank">https://chocolatey.org/install</a> and install chocolatey</p>
+<p>You can test the chocolatey install by opening a new windows and typing <code>choco</code></p>
+<h3 id="use-chocolatey-to-install-python-pip-and-pipenv">Use Chocolatey to install Python, Pip and Pipenv</h3>
+<p>navigate to <a href="https://docs.python-guide.org/starting/install3/win/" target="_blank">https://docs.python-guide.org/starting/install3/win/</a></p>
+<p><code>install python 3.7.2</code></p>
+<p><code>python --version</code></p>
+<h3 id="run-pip-install-to-install-pythons-package-manager">run pip install to install Python&apos;s package manager</h3>
+<p><code>python -m pip install -U pip</code></p>
+<p>Answer <strong>Y</strong> to any questions to install scripts</p>
+<p><code>pip &#x2014;version 19.1.1</code></p>
+<h3 id="use-pip-to-install">use pip to install</h3>
+<h4 id="pipenv-which-is-a-way-allow-creation-of-multiple-environments-on-one-machine">pipenv which is a way allow creation of multiple environments on one machine</h4>
+<p><a href="https://docs.python-guide.org/dev/virtualenvs/#virtualenvironments-ref" target="_blank">https://docs.python-guide.org/dev/virtualenvs/#virtualenvironments-ref</a></p>
+<p><code>pip install --user pipenv</code></p>
+<h2 id="install-git">install git</h2>
+<p><a href="https://git-scm.com/book/en/v2/Getting-Started-Installing-Git" target="_blank">https://git-scm.com/book/en/v2/Getting-Started-Installing-Git</a></p>
+<p>Use this link to install on Windows - choose 64 bit version if asked</p>
+<p><a href="https://git-scm.com/download/win" target="_blank">https://git-scm.com/download/win</a></p>
+<p>once downloaded click on exe to install</p>
+<h2 id="install-visual-studio-code">install Visual Studio Code</h2>
+<p><a href="https://code.visualstudio.com/download" target="_blank">https://code.visualstudio.com/download</a></p>
+<p>Choose 64bit version if asked</p>
+<h2 id="create-account-on-replit">create account on repl.it</h2>
+<p>This is a place to write, run and store code for free.</p>
+<p><a href="https://repli.it" target="_blank">https://repli.it</a> </p>
+<h2 id="create-an-account-on-githubcom">create an account on github.com</h2>
+<p>This is a place to store versioned code</p>
+<p><a href="https://github.com/" target="_blank">https://github.com/</a></p>
+<p><a href="https://chocolatey.org/packages/python/3.7.2" target="_blank">https://chocolatey.org/packages/python/3.7.2</a></p>
+<p>reboot</p>
+<p>make yourself admin</p>
+<p>install visual studio</p>
+<p>create an account</p>
 
                                 
                                 </section>
@@ -398,10 +412,14 @@ virtualenv -p [path to python executable] my_env
 
             
                 
-                <a href="turtle-commands.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Turtle Commands">
+                <a href="week-4-session-2.html" class="navigation navigation-prev " aria-label="Previous page: Week 4: Session 2">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
+                
+                <a href="turtle-commands.html" class="navigation navigation-next " aria-label="Next page: Turtle Commands">
+                    <i class="fa fa-angle-right"></i>
+                </a>
                 
             
         
@@ -410,7 +428,7 @@ virtualenv -p [path to python executable] my_env
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Environment Setup","level":"1.15","depth":1,"previous":{"title":"Turtle Commands","level":"1.14","depth":1,"path":"turtle-commands.md","ref":"turtle-commands.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"environment-setup.md","mtime":"2018-08-26T18:54:04.057Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-27T23:50:36.530Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Setup Python 3 on Windows","level":"1.13","depth":1,"next":{"title":"Turtle Commands","level":"1.14","depth":1,"path":"turtle-commands.md","ref":"turtle-commands.md","articles":[]},"previous":{"title":"Week 4: Session 2","level":"1.12","depth":1,"path":"week-4-session-2.md","ref":"week-4-session-2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"install-python-3-on-windows.md","mtime":"2019-06-27T23:25:38.098Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-27T23:50:36.530Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
