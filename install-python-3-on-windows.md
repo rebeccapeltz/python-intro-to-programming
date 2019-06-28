@@ -88,11 +88,5 @@ This is a place to store versioned code
 
 [https://chocolatey.org/packages/python/3.7.2](https://chocolatey.org/packages/python/3.7.2)
 
-reboot
 
-make yourself admin
-
-install visual studio
-
-create an account
 
