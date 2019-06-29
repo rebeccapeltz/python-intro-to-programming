@@ -6,18 +6,18 @@ Input/Output or "I/O" is a critical part of programming. In Concepts in Computin
 ## Question 1: 
 Write a program that uses the input() function to prompt a user for their name, and then welcomes them. On this activity, I've given you a head start
 
-Enter your name: Dylan
+      Enter your name: Dylan
 
-Hello Dylan
+      Hello Dylan
 
 
 
 ## Question 2: 
 Write a program that prompts a user for hours and rate per hour to compute gross pay. The program should print out gross pay. It should also print out the percentage of the Federal Minimum Wage ($7.25) and of the Seattle Minimum Wage ($15) that gross pay would be. Here's the calculation:
 
-percent_fed = gross_pay/(hours*7.25) * 100.
+      percent_fed = gross_pay/(hours*7.25) * 100.
 
-percent_sea = gross_pay/(hours*15) * 100.
+      percent_sea = gross_pay/(hours*15) * 100.
 
 
 
@@ -25,7 +25,7 @@ percent_sea = gross_pay/(hours*15) * 100.
 ## Question 3:
 Next write a program that converts Fahrenheit to Celsius. The user input will be a temperature in degrees Fahrenheit and the output will be that temperature in Celsius. 
 
-C = (F - 32) * (5/9)
+      C = (F - 32) * (5/9)
 
 
 ## Question 4: 
