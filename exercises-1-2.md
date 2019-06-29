@@ -1,7 +1,7 @@
 # Exercises 1-2
-This exercise can be found in Chapter 2 in the course text. You will have 4 "programs" to write. These all take user input, perform some operation on that input and return some output. All numbers should be rounded to two (2) decimal points. NOTE: Make sure you're forcing your inputs that take integers to integer type variables.
+You will have 4 "programs" to write. These all take user input, perform some operation on that input and return some output. All numbers should be rounded to two (2) decimal points. NOTE: Make sure you're forcing your inputs that take integers to integer type variables.
 
-Input/Output or "I/O" is a critical part of programming. In Concepts in Computing you should have learned about the notion of encapsulation and black-boxing. As a reminder, when we develop programs, our goal is to create a program that takes in a certain kind of input and if that input fits the parameters of the program will return a predictable kind of output. The process that converts input to output is often hidden (ie. blackboxed), which can be problematic (what if that process is logging your email address, for instance), but understanding the I/O model will help you write better programs.
+Input/Output or "I/O" is a critical part of programming. When we develop programs, our goal is to create a program that takes in a certain kind of input and if that input fits the parameters of the program will return a predictable kind of output. The process that converts input to output is often hidden (ie. blackboxed), which can be problematic (what if that process is logging your email address, for instance), but understanding the I/O model will help you write better programs.
 
 ## Question 1: 
 Write a program that uses the input() function to prompt a user for their name, and then welcomes them. On this activity, I've given you a head start
