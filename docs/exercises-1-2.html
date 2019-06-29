@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Computer Architecture · GitBook</title>
+        <title>Week 1: Exercise 2 · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="week-1-session-1.html" />
+    <link rel="next" href="install-python-3-on-windows.html" />
     
     
-    <link rel="prev" href="the-adventure-game.html" />
+    <link rel="prev" href="exercises-1-1.html" />
     
 
     </head>
@@ -128,7 +128,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.4" data-path="computer-architecture.html">
+        <li class="chapter " data-level="1.4" data-path="computer-architecture.html">
             
                 <a href="computer-architecture.html">
             
@@ -258,7 +258,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.14" data-path="exercises-1-2.html">
+        <li class="chapter active" data-level="1.14" data-path="exercises-1-2.html">
             
                 <a href="exercises-1-2.html">
             
@@ -340,7 +340,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Computer Architecture</a>
+        <a href="." >Week 1: Exercise 2</a>
     </h1>
 </div>
 
@@ -355,9 +355,24 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="computer-architecture">Computer Architecture</h1>
-<p>The diagram below shows the hardware of a computer and what the software has control over.</p>
-<p><img src="assets/computer-architecture.png" alt=""></p>
+                                <h1 id="exercises-1-2">Exercises 1-2</h1>
+<p>You will have 4 &quot;programs&quot; to write. These all take user input, perform some operation on that input and return some output. All numbers should be rounded to two (2) decimal points. NOTE: Make sure you&apos;re forcing your inputs that take integers to integer type variables.</p>
+<p>Input/Output or &quot;I/O&quot; is a critical part of programming. When we develop programs, our goal is to create a program that takes in a certain kind of input and if that input fits the parameters of the program will return a predictable kind of output. The process that converts input to output is often hidden (ie. blackboxed), which can be problematic (what if that process is logging your email address, for instance), but understanding the I/O model will help you write better programs.</p>
+<h2 id="question-1">Question 1:</h2>
+<p>Write a program that uses the input() function to prompt a user for their name, and then welcomes them. On this activity, I&apos;ve given you a head start</p>
+<pre><code>  Enter your name: Dylan
+
+  Hello Dylan
+</code></pre><h2 id="question-2">Question 2:</h2>
+<p>Write a program that prompts a user for hours and rate per hour to compute gross pay. The program should print out gross pay. It should also print out the percentage of the Federal Minimum Wage ($7.25) and of the Seattle Minimum Wage ($15) that gross pay would be. Here&apos;s the calculation:</p>
+<pre><code>  percent_fed = gross_pay/(hours*7.25) * 100.
+
+  percent_sea = gross_pay/(hours*15) * 100.
+</code></pre><h2 id="question-3">Question 3:</h2>
+<p>Next write a program that converts Fahrenheit to Celsius. The user input will be a temperature in degrees Fahrenheit and the output will be that temperature in Celsius. </p>
+<pre><code>  C = (F - 32) * (5/9)
+</code></pre><h2 id="question-4">Question 4:</h2>
+<p>Finally, you&apos;ll often split bills simply by how many people are there, but what if you&apos;re going out with your rich friends? What if you are your rich friends and people who make less are going out with you? Let&apos;s make a calculator that&apos;s more equitable and splits a bill based on how much each of you make. The program needs to take as input three incomes and the bill amount. It should print out the share of the bill that each person should pay. Hint: Try to figure out what percentage of your total income each of you makes and apply that to the bill.</p>
 
                                 
                                 </section>
@@ -385,12 +400,12 @@
 
             
                 
-                <a href="the-adventure-game.html" class="navigation navigation-prev " aria-label="Previous page: The Adventure Game">
+                <a href="exercises-1-1.html" class="navigation navigation-prev " aria-label="Previous page: Week 1: Exercise 1">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="week-1-session-1.html" class="navigation navigation-next " aria-label="Next page: Week 1: Session 1">
+                <a href="install-python-3-on-windows.html" class="navigation navigation-next " aria-label="Next page: Setup Python 3 on Windows">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -401,7 +416,7 @@
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Computer Architecture","level":"1.4","depth":1,"next":{"title":"Week 1: Session 1","level":"1.5","depth":1,"path":"week-1-session-1.md","ref":"week-1-session-1.md","articles":[]},"previous":{"title":"The Adventure Game","level":"1.3","depth":1,"path":"the-adventure-game.md","ref":"the-adventure-game.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"computer-architecture.md","mtime":"2018-07-10T21:10:49.408Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-29T19:07:52.944Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 1: Exercise 2","level":"1.14","depth":1,"next":{"title":"Setup Python 3 on Windows","level":"1.15","depth":1,"path":"install-python-3-on-windows.md","ref":"install-python-3-on-windows.md","articles":[]},"previous":{"title":"Week 1: Exercise 1","level":"1.13","depth":1,"path":"exercises-1-1.md","ref":"exercises-1-1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercises-1-2.md","mtime":"2019-06-29T19:05:34.850Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-06-29T19:07:52.944Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
