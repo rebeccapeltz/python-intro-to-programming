@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Week 3: Session 2 · GitBook</title>
+        <title>Install Github · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="week-4-session-1.html" />
     
-    
-    <link rel="prev" href="week-3-session-1.html" />
+    <link rel="prev" href="environment-setup.html" />
     
 
     </head>
@@ -206,7 +204,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.10" data-path="week-3-session-2.html">
+        <li class="chapter " data-level="1.10" data-path="week-3-session-2.html">
             
                 <a href="week-3-session-2.html">
             
@@ -323,7 +321,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.19" data-path="install-github.html">
+        <li class="chapter active" data-level="1.19" data-path="install-github.html">
             
                 <a href="install-github.html">
             
@@ -366,7 +364,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Week 3: Session 2</a>
+        <a href="." >Install Github</a>
     </h1>
 </div>
 
@@ -381,64 +379,66 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="week-3-session-2">Week 3: Session 2</h1>
-<p><em><strong>Internet API Read</strong></em></p>
-<h4 id="activity-1-review-week-3--session-1">Activity 1: Review Week 3  Session 1</h4>
+                                <p><strong>This is the answer to &quot;How to install Git locally?&quot;</strong></p>
+<p>Before you start this process, create an account on Github at<a href="https://github.com/" target="_blank"> </a><a href="https://github.com/" target="_blank">https://github.com/</a>.</p>
+<h1 id="download-and-install-git">Download and Install Git</h1>
+<p><a href="https://git-scm.com/downloads" target="_blank">https://git-scm.com/downloads</a></p>
+<p>This will install a Folder with a number of file and programs.</p>
+<p>Open a bash window (<code>terminal</code> on Mac or &apos;<code>git bash</code>&apos; on Windows) and type in</p>
+<p><code>git --version</code></p>
+<p>This should return a confirmation that git is installed with a version number.</p>
+<h1 id="connect-to-your-local-workstation-to-github-with-ssh">Connect to your local workstation to Github with SSH</h1>
+<p>Without SSH connection setup you will have to enter your username and password every time you connect to Github, which you will usually have to do during a <code>git push</code>  command.  By sharing your workstation public key with Github, you will not have to provided username and password to connect.</p>
+<p>Open a bash session (<code>terminal</code> on Mac or &apos;<code>git bash</code>&apos; on Windows).  All commands below should be entered into the bash session.</p>
+<p>Check to see if you already have a private key/public key setup by listing any files in the hidden direction .ssh.</p>
+<p><code>ls -al ~/.ssh</code></p>
+<p>If you don&apos;t see any of the following files you will need to create  the key files</p>
 <ul>
-<li>Computer I/O</li>
-<li>Reading and Writing files</li>
+<li>id_rsa.pub</li>
+<li>id_ecdsa.pub</li>
+<li>id_ed25519.pub</li>
 </ul>
-<h4 id="activity-2-demostrate-where-json-is-used-in-the-game">Activity 2: Demostrate where JSON is used in the Game.</h4>
-<h4 id="activity-3-introduction-to-json-data-format">Activity 3: Introduction to JSON data format</h4>
-<p>The data format most used on the internet is called JSON (pronounced JASON).  It&apos;s an acronym for JavaScript Object Notation.  JSON looks kind of like a dictionary structure.  It is more strict and requires all strings use double quotes.</p>
-<p>An API is an &quot;Application Programming Interface&quot;.  It looks like a website and sometimes it can be pasted in the browser to pull back data like a web page.  We&apos;ll be working with the Numbers API.</p>
-<p><strong>Excecise</strong></p>
-<p>Copy and Paste this URL into a browser and see what you get back: <a href="http://numbersapi.com/19" target="_blank">http://numbersapi.com/19</a></p>
-<p>Try changing the number from 19 to some other number.  What does this API do?</p>
-<p>Copy and Paste this URL into a browser and see what you get back: <a href="http://numbersapi.com/19?json" target="_blank">http://numbersapi.com/19?json</a></p>
-<p>We added &quot;?json&quot; and what changed?  We&apos;ll add the ?json when we make a request to numbers api from python code.</p>
-<h4 id="activity-4-transform-a-dictionary-into-a-valid-json-string-using-dumps">Activity 4: Transform a Dictionary into a valid JSON string using <em><strong>dumps</strong></em></h4>
-<p>Is there a difference between the Dictionary and the JSON?</p>
-<pre><code>import json
-print(json.dumps({&apos;name&apos;: &apos;Maria&apos;, &apos;age&apos;: 20, &apos;occupation&apos;: &apos;programmer&apos;}))
-</code></pre><p>What happens if you try to use dumps with invalid JSON</p>
-<p>In Python <strong>None </strong>means nothing but it is not recognized by the Python dumps command. In JSON, the concept is nothing is specified by <strong>null</strong>.  What does the following code do?</p>
-<pre><code>import json
-print(json.dumps({&apos;name&apos;: &apos;Maria&apos;, &apos;age&apos;: 20, &apos;occupation&apos;: None}))
-</code></pre><h4 id="activity-5-transform-a-string-into-json-using-load-as-we-read-in-a-file">Activity 5: Transform a String into JSON using <em><strong>load as we read in a file</strong></em></h4>
-<p>What do you see when you run this?  What happens if you change &quot;programmer&quot; to <strong>null</strong>?</p>
-<pre><code>import json
-str = &apos;{&quot;name&quot;: &quot;Maria&quot;, &quot;age&quot;: 20, &quot;occupation&quot;: &quot;programmer&quot;}&apos;
-j = json.loads(str)
-print (j)
-</code></pre><h4 id="activity-6-write-json-to-a-local-file">Activity 6: Write JSON to a local File</h4>
-<pre><code>import json
-myfile = open(&quot;local.json&quot;,&quot;w&quot;)
-myfile.write(json.dumps({&apos;name&apos;: &apos;Maria&apos;, &apos;age&apos;: 20, &apos;occupation&apos;: &apos;programmer&apos;}))
-myfile.close()
-print (myfile.name, &quot;is open?&quot;, myfile.closed)
-</code></pre><h4 id="activity-7-read-json-from-a-local-file">Activity 7: Read JSON from a local File</h4>
-<p>This is another way to open a file and make variable out of the filename.</p>
-<pre><code>import json
-
-with open(&apos;local.json&apos;, &apos;r&apos;) as f:
-    dict = json.load(f)
-print(dict)
-</code></pre><h4 id="activity-8-read-json-from-the-internet">Activity 8: Read JSON from the Internet</h4>
-<p>We&apos;ve got all the skills to read from the internet now.  We can get data from the numbers api and examine the various types using the <strong>type </strong>function.</p>
-<pre><code>import requests, json
-
-data = requests.get(&quot;http://numbersapi.com/19?json&quot;)
-dict = json.loads(data.content)
-print(dict)
-
-print (&quot;The type of the object  returned from the internet is&quot;, type(data))
-print (&quot;The type of the content returned from the internet is&quot;, type(data.content))
-print (&quot;The type of the data that the json.loads command creates is &quot;, type(dict))
-
-print(&quot;The interesting thing about 19 is: &quot;, dict[&quot;text&quot;])
-</code></pre><p><strong>Excercise</strong>:</p>
-<p>Create a challenge where you ask the user to guess a number.  If they guess correctly call the numbers API and report back what is interesting about that number.</p>
+<h1 id="create-public-keyprivate-key-files-if-they-dont-already-exist">Create public key/private key files if they don&apos;t already exist</h1>
+<p><strong>You only need to do this step if you don&apos;t already have public/private key files.</strong></p>
+<p>You ll first create the key files using the email you provided to Github.  This will label the keys with that  email.</p>
+<p><code>ssh-keygen -t rsa -b 4096 -C &quot;your_email@example.com&quot;</code></p>
+<p><code>Generating public/private rsa key pair.</code></p>
+<p>Next you&apos;ll be prompted to enter a file name for your keys and you can just press enter to accept the default.</p>
+<p><code>Enter a file in which to save the key (/c/Users/you/.ssh/id_rsa):[Press enter]</code></p>
+<p>Finally, you&apos;ll be prompted to enter a passphrase.  This is a security feature and you will have to enter this passphrase when you connect to Github, so be sure to remember it.  It can be as simple as a four digit pin number.</p>
+<p><code>Enter passphrase (empty for no passphrase): [Type a passphrase]</code></p>
+<p><code>Enter same passphrase again: [Type passphrase again]</code></p>
+<h1 id="start-ssh-agent-and-add-keys">Start SSH Agent and Add Keys</h1>
+<p>The SSH Agent is a process that will allow you to manage SSH Keys.  You&apos;ll start that process and add your keys with the following command.</p>
+<p><code>eval $(ssh-agent -s)</code></p>
+<p>You will see a response like this indicate that the process is running.</p>
+<p><code>Agent pid 59566</code></p>
+<p>The command below adds your key to the ssh agent.  If the name of your key is different replace <code>id_rsa</code> with the name of your key.</p>
+<p><code>ssh-add ~/.ssh/id_rsa</code></p>
+<h1 id="add-the-ssh-key-to-you-github-acccount">Add the SSH Key to you Github Acccount</h1>
+<p>Now you need to add the public key to your Github account.  This will allow Github to decrypt the data you send it via SSH.</p>
+<p>We start by using the <code>clip</code> command to copy the content of the public key SSH file to your local buffer.</p>
+<p><code>clip &lt; ~/.ssh/id_rsa.pub</code></p>
+<p>If the <code>clip</code> command is not installed you can list the file to the console and then copy the contents into your buffer with ctrl-c/cmd-c.  The <code>cat</code> command will list the file to the console.</p>
+<p><code>cat ~/.ssh/id_rsa.pub</code></p>
+<p>You can also open the file with a text editor and copy the content into the buffer if you have trouble with the <code>clip</code> command.</p>
+<p>Next, go to your Github account online and click on your photo.  This will reveal a dropdown selection where you should select <strong>Settings</strong>.</p>
+<p><img src="assets/settings-github.PNG" alt=""></p>
+<p>The <strong>Setings</strong> menu will appear on the left of the screen and from there you will click on SSH and GPG keys.</p>
+<p><img src="assets/settings-github-2.PNG" alt=""></p>
+<p>After you click on SSH and GPG keys you, you will you click on a button to add a new key.</p>
+<p><img src="assets/ssh-key-add.PNG" alt=""></p>
+<p>Click on the Green button to add the key you have in you buffer.  You should see a form. Enter a Title that help you to remember the workstation you got the key from and then paste the key into the key textarea.  Finally click on the Add SSH key to add it to the list of keys known to Github.</p>
+<p><img src="assets/ssh-key-add-2.PNG" alt=""></p>
+<h1 id="update-user-name-and-email-in-local-git-config">Update User Name and Email in Local Git Config</h1>
+<p>The local Git program maintains configuration data about you that should correspond to your account on github.com.  You&apos;ll want to provide the email and user name that you used for github.com in when you execute the following commands.</p>
+<p><code>git config --global user.name &quot;Mona Lisa&quot;</code></p>
+<p><code>git config --global user.email &quot;email@example.com&quot;</code></p>
+<p>You can execute these commands to verify that you have set up the config variables properly.</p>
+<p><code>git config --global user.name</code></p>
+<p><code>git config --global user.email</code></p>
+<p>Additional References</p>
+<p><a href="https://help.github.com/articles/connecting-to-github-with-ssh/" target="_blank">https://help.github.com/articles/connecting-to-github-with-ssh/</a></p>
 
                                 
                                 </section>
@@ -466,14 +466,10 @@ print(&quot;The interesting thing about 19 is: &quot;, dict[&quot;text&quot;])
 
             
                 
-                <a href="week-3-session-1.html" class="navigation navigation-prev " aria-label="Previous page: Week 3: Session 1">
+                <a href="environment-setup.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Environment Setup">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="week-4-session-1.html" class="navigation navigation-next " aria-label="Next page: Week 4: Session 1">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -482,7 +478,7 @@ print(&quot;The interesting thing about 19 is: &quot;, dict[&quot;text&quot;])
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 3: Session 2","level":"1.10","depth":1,"next":{"title":"Week 4: Session 1","level":"1.11","depth":1,"path":"week-4-session-1.md","ref":"week-4-session-1.md","articles":[]},"previous":{"title":"Week 3: Session 1","level":"1.9","depth":1,"path":"week-3-session-1.md","ref":"week-3-session-1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"week-3-session-2.md","mtime":"2018-07-10T21:10:49.438Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-15T17:19:35.875Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Install Github","level":"1.19","depth":1,"previous":{"title":"Environment Setup","level":"1.18","depth":1,"path":"environment-setup.md","ref":"environment-setup.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"install-github.md","mtime":"2019-07-15T17:16:34.663Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-15T17:19:35.875Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

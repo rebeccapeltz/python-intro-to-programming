@@ -14,7 +14,9 @@
 * [Week 4: Session 2](week-4-session-2.md)
 * [Week 1: Exercise 1](exercises-1-1.md)
 * [Week 1: Exercise 2](exercises-1-2.md)
+* [Week 4: Exercise](exercises-4.md)
 * [Setup Python 3 on Windows](install-python-3-on-windows.md)
 * [Turtle Commands](turtle-commands.md)
 * [Environment Setup](environment-setup.md)
+* [Install Github](install-github.md)
 
