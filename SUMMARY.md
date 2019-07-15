@@ -19,4 +19,5 @@
 * [Turtle Commands](turtle-commands.md)
 * [Environment Setup](environment-setup.md)
 * [Install Github](install-github.md)
+* [Git Commands](git-cli.md)
 
