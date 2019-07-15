@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Week 1: Session 2 · GitBook</title>
+        <title>Week 4: Exercise · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,10 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="week-2-session-1.html" />
+    <link rel="next" href="install-python-3-on-windows.html" />
     
     
-    <link rel="prev" href="week-1-session-1.html" />
+    <link rel="prev" href="exercises-1-2.html" />
     
 
     </head>
@@ -154,7 +154,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6" data-path="week-1-session-2.html">
+        <li class="chapter " data-level="1.6" data-path="week-1-session-2.html">
             
                 <a href="week-1-session-2.html">
             
@@ -271,7 +271,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.15" data-path="exercises-4.html">
+        <li class="chapter active" data-level="1.15" data-path="exercises-4.html">
             
                 <a href="exercises-4.html">
             
@@ -379,7 +379,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Week 1: Session 2</a>
+        <a href="." >Week 4: Exercise</a>
     </h1>
 </div>
 
@@ -394,31 +394,56 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="week-1-session-2">Week 1: Session 2</h1>
-<p><em><strong>Variable, Types, Console, and Sequencing</strong></em></p>
-<h4 id="activity-1-review">Activity 1: Review</h4>
-<p>Review Session 1</p>
-<ul>
-<li>Writing a program on paper.  </li>
-<li>What is the Python language? </li>
-<li>Setting up a Coding environment: place to type in code and python program to execute it.  </li>
-<li>Write an instruction to print your name.</li>
-<li>Look at diagram of Computer Architecture: identify what parts of the computer we used print names.</li>
-</ul>
-<h4 id="activity-2-write-a-program-to-introduce-yourself">Activity 2: Write a program to introduce yourself</h4>
-<ul>
-<li>Understand what a variable is and how to create one</li>
-<li>Understand basic data types such as numbers and strings</li>
-<li>Learn basic syntax print, variables, operators, string &amp; integrate, import</li>
-<li>Create a program to introduce yourself: &quot;Hello my name is _____&quot;</li>
-<li>types: string, int, float, double</li>
-</ul>
-<h4 id="activity-3-write-a-program-that-works-with-numbers">Activity 3: Write a Program that works with numbers</h4>
-<pre><code>age = input(&quot;How old are you? &quot;)
-years_plus_3 = int(age) + 3
-print (&quot;in 3 years, you&apos;ll be &quot;,years_plus_3)
-</code></pre><p>Write a challenge that uses math to add, subtract, multiply or divide</p>
-<h4 id=""> </h4>
+                                <h1 id="using-apis">Using API&apos;s</h1>
+<p>API stands for Application Programming Interface.  It is a way for developers to get data from the internet.</p>
+<p>We use <a href="https://www.getpostman.com/downloads/" target="_blank">Postman</a> to analyze the data in order to see how to include it in our app.    </p>
+<h2 id="the-numbers-api">The Numbers API</h2>
+<p>Here we can find interesting facts about Numbers</p>
+<pre><code class="lang-Python"><span class="hljs-keyword">import</span> requests, json
+
+
+data = requests.get(<span class="hljs-string">&quot;http://numbersapi.com/19?json&quot;</span>)
+dict = json.loads(data.content)
+print(dict)
+
+<span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;The type of the object  returned from the internet is&quot;</span>, type(data))
+<span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;The type of the content returned from the internet is&quot;</span>, type(data.content))
+<span class="hljs-keyword">print</span> (<span class="hljs-string">&quot;The type of the data that the json.loads command creates is &quot;</span>, type(dict))
+
+print(<span class="hljs-string">&quot;The interesting thing about 19 is: &quot;</span>, dict[<span class="hljs-string">&quot;text&quot;</span>])
+</code></pre>
+<h2 id="cat-facts">Cat facts</h2>
+<p>(<a href="https://catfact.ninja)[https://catfact.ninja" target="_blank">https://catfact.ninja)[https://catfact.ninja</a>]  </p>
+<pre><code class="lang-Python"><span class="hljs-keyword">import</span> requests, json
+
+data = requests.get(<span class="hljs-string">&quot;https://catfact.ninja/breeds?limit=5&quot;</span>)
+dict = json.loads(data.content)
+print(dict[<span class="hljs-string">&quot;data&quot;</span>])
+
+<span class="hljs-keyword">for</span> cat <span class="hljs-keyword">in</span> dict[<span class="hljs-string">&quot;data&quot;</span>]:
+  <span class="hljs-keyword">for</span> property <span class="hljs-keyword">in</span> cat:
+    print(property,<span class="hljs-string">&quot;:&quot;</span>,cat[property])
+  print(<span class="hljs-string">&quot;------------&quot;</span>)
+</code></pre>
+<h2 id="nba-facts">NBA Facts</h2>
+<pre><code class="lang-Python">
+<span class="hljs-keyword">import</span> requests, json
+
+data = requests.get(<span class="hljs-string">&quot;https://data.nba.net/&quot;</span>)
+dict = json.loads(data.content)
+team_data = dict[<span class="hljs-string">&quot;sports_content&quot;</span>][<span class="hljs-string">&quot;teams&quot;</span>][<span class="hljs-string">&quot;team&quot;</span>]
+<span class="hljs-comment"># print (team_data)</span>
+<span class="hljs-keyword">for</span> team <span class="hljs-keyword">in</span> team_data:
+  <span class="hljs-keyword">if</span> (team[<span class="hljs-string">&quot;is_nba_team&quot;</span>]):
+    print(team[<span class="hljs-string">&quot;team_abbrev&quot;</span>],team[<span class="hljs-string">&quot;team_nickname&quot;</span>], team[<span class="hljs-string">&quot;conference&quot;</span>], team[<span class="hljs-string">&quot;division_id&quot;</span>])
+</code></pre>
+<h2 id="pokemon">Pokemon</h2>
+<p>import requests, json</p>
+<p>data = requests.get(&quot;<a href="https://pokeapi.co/api/v2/pokemon" target="_blank">https://pokeapi.co/api/v2/pokemon</a>&quot;)
+dict = json.loads(data.content)</p>
+<p>results = dict[&quot;results&quot;]
+for result in results:
+  print(result[&quot;name&quot;])</p>
 
                                 
                                 </section>
@@ -446,12 +471,12 @@ print (&quot;in 3 years, you&apos;ll be &quot;,years_plus_3)
 
             
                 
-                <a href="week-1-session-1.html" class="navigation navigation-prev " aria-label="Previous page: Week 1: Session 1">
+                <a href="exercises-1-2.html" class="navigation navigation-prev " aria-label="Previous page: Week 1: Exercise 2">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
                 
-                <a href="week-2-session-1.html" class="navigation navigation-next " aria-label="Next page: Week 2: Session 1">
+                <a href="install-python-3-on-windows.html" class="navigation navigation-next " aria-label="Next page: Setup Python 3 on Windows">
                     <i class="fa fa-angle-right"></i>
                 </a>
                 
@@ -462,7 +487,7 @@ print (&quot;in 3 years, you&apos;ll be &quot;,years_plus_3)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 1: Session 2","level":"1.6","depth":1,"next":{"title":"Week 2: Session 1","level":"1.7","depth":1,"path":"week-2-session-1.md","ref":"week-2-session-1.md","articles":[]},"previous":{"title":"Week 1: Session 1","level":"1.5","depth":1,"path":"week-1-session-1.md","ref":"week-1-session-1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"week-1-session-2.md","mtime":"2018-07-10T21:25:24.546Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-15T17:34:49.107Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Week 4: Exercise","level":"1.15","depth":1,"next":{"title":"Setup Python 3 on Windows","level":"1.16","depth":1,"path":"install-python-3-on-windows.md","ref":"install-python-3-on-windows.md","articles":[]},"previous":{"title":"Week 1: Exercise 2","level":"1.14","depth":1,"path":"exercises-1-2.md","ref":"exercises-1-2.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"exercises-4.md","mtime":"2019-07-15T17:32:40.963Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-15T17:34:49.107Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>

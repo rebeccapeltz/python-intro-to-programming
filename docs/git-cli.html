@@ -4,7 +4,7 @@
     <head>
         <meta charset="UTF-8">
         <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
-        <title>Week 1: Session 2 · GitBook</title>
+        <title>Git Commands · GitBook</title>
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="">
         <meta name="generator" content="GitBook 3.2.3">
@@ -57,10 +57,8 @@
     <link rel="shortcut icon" href="gitbook/images/favicon.ico" type="image/x-icon">
 
     
-    <link rel="next" href="week-2-session-1.html" />
     
-    
-    <link rel="prev" href="week-1-session-1.html" />
+    <link rel="prev" href="install-github.html" />
     
 
     </head>
@@ -154,7 +152,7 @@
             
         </li>
     
-        <li class="chapter active" data-level="1.6" data-path="week-1-session-2.html">
+        <li class="chapter " data-level="1.6" data-path="week-1-session-2.html">
             
                 <a href="week-1-session-2.html">
             
@@ -336,7 +334,7 @@
             
         </li>
     
-        <li class="chapter " data-level="1.20" data-path="git-cli.html">
+        <li class="chapter active" data-level="1.20" data-path="git-cli.html">
             
                 <a href="git-cli.html">
             
@@ -379,7 +377,7 @@
     <!-- Title -->
     <h1>
         <i class="fa fa-circle-o-notch fa-spin"></i>
-        <a href="." >Week 1: Session 2</a>
+        <a href="." >Git Commands</a>
     </h1>
 </div>
 
@@ -394,32 +392,36 @@
     
                                 <section class="normal markdown-section">
                                 
-                                <h1 id="week-1-session-2">Week 1: Session 2</h1>
-<p><em><strong>Variable, Types, Console, and Sequencing</strong></em></p>
-<h4 id="activity-1-review">Activity 1: Review</h4>
-<p>Review Session 1</p>
-<ul>
-<li>Writing a program on paper.  </li>
-<li>What is the Python language? </li>
-<li>Setting up a Coding environment: place to type in code and python program to execute it.  </li>
-<li>Write an instruction to print your name.</li>
-<li>Look at diagram of Computer Architecture: identify what parts of the computer we used print names.</li>
-</ul>
-<h4 id="activity-2-write-a-program-to-introduce-yourself">Activity 2: Write a program to introduce yourself</h4>
-<ul>
-<li>Understand what a variable is and how to create one</li>
-<li>Understand basic data types such as numbers and strings</li>
-<li>Learn basic syntax print, variables, operators, string &amp; integrate, import</li>
-<li>Create a program to introduce yourself: &quot;Hello my name is _____&quot;</li>
-<li>types: string, int, float, double</li>
-</ul>
-<h4 id="activity-3-write-a-program-that-works-with-numbers">Activity 3: Write a Program that works with numbers</h4>
-<pre><code>age = input(&quot;How old are you? &quot;)
-years_plus_3 = int(age) + 3
-print (&quot;in 3 years, you&apos;ll be &quot;,years_plus_3)
-</code></pre><p>Write a challenge that uses math to add, subtract, multiply or divide</p>
-<h4 id=""> </h4>
-
+                                <p>This FAQ answers the question &quot;How to use the Git Command Line?&quot;</p>
+<h1 id="git-command-line">Git Command Line</h1>
+<p>This is not an all inclusive document on how to use the Git Command Line.  This a quick reference on the command to clone a repo from Github.com and then push changes back to Github.com.</p>
+<p>I&apos;m am using a repo, <strong>wats3010-hello-world</strong> from my account, <strong>rebeccapeltz</strong>, on <a href="https://www.github.com" target="_blank">Github.com</a> to demonstrate these commands.</p>
+<h2 id="copy-the-ssh-git-address-of-your-repo-into-your-clipboard">Copy the ssh git address of your repo into your clipboard</h2>
+<p>The picture below shows that I have clicked on the green button (see green arrow in picture) labeled <strong>Clone or Download</strong>.  I have also clicked on the link labeled &quot;<strong>Use SSH</strong>&quot; (see blue arrow in the picture).  I see an address <strong>git@github.com:rebeccapeltz/wats3010-</strong> and I have clicked on the <strong>copy icon</strong> to  copy this address into my clipboard (see yellow arrow in the picture).</p>
+<p><img src="assets/clone-repo.png" alt=""></p>
+<h2 id="clonecommand">Clonecommand</h2>
+<p>You can open a command line window in visual studio code or using terminal (Mac) or git bash (Windows with Git installed).  From the command line you can navigate to your projects directory (a directory you have created under your home directory) and then issue the clone command by typing clone and then pasting the git address onto the command line.</p>
+<pre><code>cd ~/projects
+git clone git@github.com:rebeccapeltz/wats3010-hello-world.git
+</code></pre><p>You will see output showing that the code from github.com is being copied down to your local machine.</p>
+<p>Push Changes back to Github</p>
+<p>After you have made changes to your code and tested to see that they are working as you expect, you will issue the following commands in the root of your project to push the changes back to github.  Lines with a # at the start are comments.  You only execute the command that start with git below.</p>
+<pre><code># optional check to see the file you have changed they will appear in red
+git status
+# add the file to the local git repo - you can name each file or use . to specify all files below current
+# directory
+git add .
+# if you issue git status now the files added will be green
+# commit the files to the directory and provide a message describing the changes
+git commit -m&quot;my changes for this commit&quot;
+# if you issue git status now you&apos;ll see a notice that you have files to push
+# push the files to github.com repo
+git push origin master
+</code></pre><p><strong>You might want to commit to memory</strong></p>
+<pre><code>git add .
+git commit -m&quot;my changes&quot;
+git push origin master
+</code></pre>
                                 
                                 </section>
                             
@@ -446,14 +448,10 @@ print (&quot;in 3 years, you&apos;ll be &quot;,years_plus_3)
 
             
                 
-                <a href="week-1-session-1.html" class="navigation navigation-prev " aria-label="Previous page: Week 1: Session 1">
+                <a href="install-github.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page: Install Github">
                     <i class="fa fa-angle-left"></i>
                 </a>
                 
-                
-                <a href="week-2-session-1.html" class="navigation navigation-next " aria-label="Next page: Week 2: Session 1">
-                    <i class="fa fa-angle-right"></i>
-                </a>
                 
             
         
@@ -462,7 +460,7 @@ print (&quot;in 3 years, you&apos;ll be &quot;,years_plus_3)
     <script>
         var gitbook = gitbook || [];
         gitbook.push(function() {
-            gitbook.page.hasChanged({"page":{"title":"Week 1: Session 2","level":"1.6","depth":1,"next":{"title":"Week 2: Session 1","level":"1.7","depth":1,"path":"week-2-session-1.md","ref":"week-2-session-1.md","articles":[]},"previous":{"title":"Week 1: Session 1","level":"1.5","depth":1,"path":"week-1-session-1.md","ref":"week-1-session-1.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"week-1-session-2.md","mtime":"2018-07-10T21:25:24.546Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-15T17:34:49.107Z"},"basePath":".","book":{"language":""}});
+            gitbook.page.hasChanged({"page":{"title":"Git Commands","level":"1.20","depth":1,"previous":{"title":"Install Github","level":"1.19","depth":1,"path":"install-github.md","ref":"install-github.md","articles":[]},"dir":"ltr"},"config":{"gitbook":"*","theme":"default","variables":{},"plugins":[],"pluginsConfig":{"highlight":{},"search":{},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"sharing":{"facebook":true,"twitter":true,"google":false,"weibo":false,"instapaper":false,"vk":false,"all":["facebook","google","twitter","weibo","instapaper"]},"fontsettings":{"theme":"white","family":"sans","size":2},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"}},"file":{"path":"git-cli.md","mtime":"2019-07-15T17:34:26.575Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-07-15T17:34:49.107Z"},"basePath":".","book":{"language":""}});
         });
     </script>
 </div>
